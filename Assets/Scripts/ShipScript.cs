@@ -10,7 +10,7 @@ public class ShipScript : MonoBehaviour
     [SerializeField] private float colliderRadius;
 
     [SerializeField] private Vector2 thrustDirection = new Vector2(1, 0);
-    [SerializeField] private float thrustForce = 25.75f;
+    [SerializeField] private float thrustForce = 40.0f;
 
     [SerializeField] private float rotateDegreesPerSecond = 50.0f;
 
@@ -25,7 +25,6 @@ public class ShipScript : MonoBehaviour
     void Start()
     {
 
-        //colliderRadius = GetComponent<CircleCollider2D>().radius;
     }
 
     // Update is called once per frame
@@ -35,18 +34,18 @@ public class ShipScript : MonoBehaviour
         float rotateInput = Input.GetAxis("Rotate");
         float rotateAmount = rotateDegreesPerSecond * Time.deltaTime;
 
-        //if (rotateInput != 0)
-        //{ 
-            if (rotateInput < 0)
-            {
-                transform.Rotate(Vector3.forward, rotateAmount * -1);
-            }
-            if (rotateInput > 0)
-            {
-                transform.Rotate(Vector3.forward, rotateAmount);
-            }
-        //}
+        if (rotateInput < 0)
+        {
+            transform.Rotate(Vector3.forward, rotateAmount * -1);
+        }
+        if (rotateInput > 0)
+        {
+            transform.Rotate(Vector3.forward, rotateAmount);
+        }
 
+        
+        float rotateZ = transform.eulerAngles.z * Mathf.Deg2Rad;
+        thrustDirection = new Vector2(Mathf.Cos(rotateZ), Mathf.Sin(rotateZ));
         
     }
 
@@ -57,6 +56,12 @@ public class ShipScript : MonoBehaviour
 
         if (thrustInput > 0)
         {
+            //thrustDirection.Normalize();
+            //rb2d.velocity.Normalize();
+            
+            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            rb2d.constraints = RigidbodyConstraints2D.None;
+            
             rb2d.AddForce(thrustDirection * thrustForce, ForceMode2D.Force);
         }
     }

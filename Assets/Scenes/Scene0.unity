@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: thrustForce
-      value: 25.75
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: circleCollider
