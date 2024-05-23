@@ -133,12 +133,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: thrustForce
-      value: 27
+      value: 25.75
       objectReference: {fileID: 0}
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: circleCollider
       value: 
       objectReference: {fileID: 215590764}
+    - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
+      propertyPath: rotateDegreesPerSecond
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2852030519906413989, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: m_Name
       value: Ship

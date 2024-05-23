@@ -7,10 +7,12 @@ public class ShipScript : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] public CircleCollider2D circleCollider;
-    public float colliderRadius;
+    [SerializeField] private float colliderRadius;
 
-    public Vector2 thrustDirection = new Vector2(1, 0);
-    public float thrustForce = 27.0f;
+    [SerializeField] private Vector2 thrustDirection = new Vector2(1, 0);
+    [SerializeField] private float thrustForce = 25.75f;
+
+    [SerializeField] private float rotateDegreesPerSecond = 50.0f;
 
     void Awake()
     {
@@ -29,6 +31,22 @@ public class ShipScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // calculate rotation amount and apply rotation
+        float rotateInput = Input.GetAxis("Rotate");
+        float rotateAmount = rotateDegreesPerSecond * Time.deltaTime;
+
+        //if (rotateInput != 0)
+        //{ 
+            if (rotateInput < 0)
+            {
+                transform.Rotate(Vector3.forward, rotateAmount * -1);
+            }
+            if (rotateInput > 0)
+            {
+                transform.Rotate(Vector3.forward, rotateAmount);
+            }
+        //}
+
         
     }
 
