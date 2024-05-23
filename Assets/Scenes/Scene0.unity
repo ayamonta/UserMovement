@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: thrustForce
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
+      propertyPath: circleCollider
+      value: 
+      objectReference: {fileID: 215590764}
     - target: {fileID: 2852030519906413989, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -184,6 +188,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
+--- !u!58 &215590764 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3146572179126101192, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
+  m_PrefabInstance: {fileID: 215590763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +205,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -321,6 +331,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72eabfde5f65edf4fb4e96382496ae56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
