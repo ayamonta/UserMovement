@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: thrustForce
-      value: 40
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: circleCollider
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 215590764}
     - target: {fileID: 1436852088905817491, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: rotateDegreesPerSecond
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2852030519906413989, guid: 553204184f471b14c9eeecf2359ab249, type: 3}
       propertyPath: m_Name

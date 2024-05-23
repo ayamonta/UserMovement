@@ -10,21 +10,21 @@ public class ShipScript : MonoBehaviour
     [SerializeField] private float colliderRadius;
 
     [SerializeField] private Vector2 thrustDirection = new Vector2(1, 0);
-    [SerializeField] private float thrustForce = 40.0f;
+    [SerializeField] private float thrustForce = 150;
 
-    [SerializeField] private float rotateDegreesPerSecond = 50.0f;
+    [SerializeField] private float rotateDegreesPerSecond = 80;
 
+    // allows initialization of scripts; should be used to set up references
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
-        colliderRadius = circleCollider.radius;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        colliderRadius = circleCollider.radius;
     }
 
     // Update is called once per frame
@@ -55,13 +55,21 @@ public class ShipScript : MonoBehaviour
         float thrustInput = Input.GetAxis("Thrust");
 
         if (thrustInput > 0)
-        {
-            //thrustDirection.Normalize();
-            //rb2d.velocity.Normalize();
+        {   
+            // method 1 for no acceleration
+            //rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+            //rb2d.constraints = RigidbodyConstraints2D.None;
+
+            // method 2 for no acceleration
+            //rb2d.velocity = new Vector3(0, 0, 0);
             
-            rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
-            rb2d.constraints = RigidbodyConstraints2D.None;
-            
+            // method 3 for no acceleration
+            rb2d.velocity = Vector3.zero;
+
+            // additional for no acceleration:
+            // rb2d.angularVelocity = Vector3.zero;
+            //rb2d.Sleep();
+
             rb2d.AddForce(thrustDirection * thrustForce, ForceMode2D.Force);
         }
     }
